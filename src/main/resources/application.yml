@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    gcp:
+      project-id: aptkode-firestore
+      firestore:
+        credentials:
+          location: classpath:aptkode-firestore.json
