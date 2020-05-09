@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.aptkode</groupId>
-	<artifactId>spring-boot-firebase-firestore</artifactId>
+	<artifactId>spring-boot-firestore-example</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-boot-firebase-firestore</name>
+	<name>spring-boot-firestore-example</name>
 	<description>Demo project for Spring Boot Firebase Firestore</description>
 
 	<properties>
