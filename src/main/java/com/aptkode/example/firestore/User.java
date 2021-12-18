@@ -1,7 +1,7 @@
 package com.aptkode.example.firestore;
 
 import com.google.cloud.firestore.annotation.DocumentId;
-import org.springframework.cloud.gcp.data.firestore.Document;
+import com.google.cloud.spring.data.firestore.Document;
 
 import java.util.List;
 
