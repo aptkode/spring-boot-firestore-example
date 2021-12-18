@@ -10,6 +10,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -28,32 +29,33 @@ public class FirestoreApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(FirestoreApplication.class, args);
+        WebClient.create("http://localhost:8080");
     }
 
     @Bean
     public CommandLineRunner commandLineRunner() {
         return args -> {
-            logger.info("{} app initialized.", firestore.getOptions().getProjectId());
-            writeAndReadDocument();
-            User user = readDocument();
-            logger.info("user name: {} age: {}", user.getName(), user.getAge());
-            updateDocument();
-            user = readDocument();
-            logger.info("user name: {} age: {}", user.getName(), user.getAge());
-            deleteDocument();
-            insertUsers();
-            logger.info("male users: {}", getUsersByGender(Gender.MALE));
-            insertUsersBatch();
-            getUsersByGenderAsync(Gender.MALE, users -> logger.info("male users: {}", users));
-            getUsersByInterests(Arrays.asList("ESports", "Swimming"),
-                    users -> logger.info("users who likes Swimming or ESports: {}", users));
-            getUsersByAges(Arrays.asList(18, 25),
-                    users -> logger.info("users who's age is 18 or 25: {}", users));
-            getUsersInAgeRange(17, 20,
-                    users -> logger.info("users who's age is between 17 and 20 inclusive: {}", users));
-            updateAddresses();
-            getUsersLiveInCity("San Francisco",
-                    users -> logger.info("users lives in San Francisco: {}", users));
+//            logger.info("{} app initialized.", firestore.getOptions().getProjectId());
+//            writeAndReadDocument();
+//            User user = readDocument();
+//            logger.info("user name: {} age: {}", user.getName(), user.getAge());
+//            updateDocument();
+//            user = readDocument();
+//            logger.info("user name: {} age: {}", user.getName(), user.getAge());
+//            deleteDocument();
+//            insertUsers();
+//            logger.info("male users: {}", getUsersByGender(Gender.MALE));
+//            insertUsersBatch();
+//            getUsersByGenderAsync(Gender.MALE, users -> logger.info("male users: {}", users));
+//            getUsersByInterests(Arrays.asList("ESports", "Swimming"),
+//                    users -> logger.info("users who likes Swimming or ESports: {}", users));
+//            getUsersByAges(Arrays.asList(18, 25),
+//                    users -> logger.info("users who's age is 18 or 25: {}", users));
+//            getUsersInAgeRange(17, 20,
+//                    users -> logger.info("users who's age is between 17 and 20 inclusive: {}", users));
+//            updateAddresses();
+//            getUsersLiveInCity("San Francisco",
+//                    users -> logger.info("users lives in San Francisco: {}", users));
         };
     }
 

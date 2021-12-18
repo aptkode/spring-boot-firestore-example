@@ -1,8 +1,13 @@
 package com.aptkode.example.firestore;
 
+import com.google.cloud.firestore.annotation.DocumentId;
+import org.springframework.cloud.gcp.data.firestore.Document;
+
 import java.util.List;
 
+@Document(collectionName = "users")
 public class User {
+    @DocumentId
     private String name;
     private int age;
     private Gender gender;
